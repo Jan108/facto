@@ -26,7 +26,7 @@ RUN tar xzf release.tar.gz -C /opt/facto-install && \
 # Expose the default Facto port
 EXPOSE 9000
 
-COPY entrypoint.sh entrypoint.sh
+COPY docker/entrypoint.sh ./entrypoint.sh
 RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["/opt/facto/entrypoint.sh"]
