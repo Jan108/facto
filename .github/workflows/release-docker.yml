@@ -44,7 +44,7 @@ jobs:
           file: docker/Dockerfile
           push: true
           build-args: |
-            ASSET_FILENAME=release-${{ github.ref_name }}.tar.gz
+            ASSET_FILENAME="release-${{ github.ref_name }}.tar.gz"
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/facto:${{ github.ref_name }}
             ${{ secrets.DOCKERHUB_USERNAME }}/facto:latest
