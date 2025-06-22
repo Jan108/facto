@@ -1,5 +1,4 @@
 # Start with a minimal base with OpenJDK (required by Facto)
-ARG ASSET_FILENAME
 FROM openjdk:11-slim
 
 ARG ASSET_FILENAME
