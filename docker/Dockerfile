@@ -2,6 +2,8 @@
 ARG ASSET_FILENAME
 FROM openjdk:11-slim
 
+ARG ASSET_FILENAME
+
 # Metadata
 LABEL description="Docker image for Facto using prebuilt binaries"
 
