@@ -1,4 +1,4 @@
-name: Build and Push to Docker Hub on Release
+name: Docker Image Release
 
 on:
   release:
@@ -20,6 +20,8 @@ jobs:
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
 
       - name: Download release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           gh release download "$GITHUB_REF_NAME" \
             -p "release-${{ env.RELEASE_VERSION }}.tar.gz" \
