@@ -18,7 +18,8 @@ RUN apt-get update && \
 WORKDIR /opt/facto
 
 # Setup facto from release assets
-COPY release-assets/${ASSET_FILENAME} ./release.tar.gz
+RUN echo "Building with asset: '${ASSET_FILENAME}'"
+COPY ${ASSET_FILENAME} ./release.tar.gz
 RUN echo "File structure root: $(ls -l .)"
 RUN tar xzf release.tar.gz -C /opt/facto-install && \
     cp -r /opt/facto-install/bin /opt/facto/ && \
