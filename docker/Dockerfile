@@ -21,12 +21,12 @@ WORKDIR /opt/facto
 COPY release-assets/${ASSET_FILENAME} ./release.tar.gz
 RUN tar xzf release.tar.gz -C /opt/facto-install && \
     cp -r /opt/facto-install/bin /opt/facto/ && \
-    cp -r /opt/facto-install/lib /opt/facto/ && \
+    cp -r /opt/facto-install/lib /opt/facto/
 
 # Expose the default Facto port
 EXPOSE 9000
 
-COPY docker/entrypoint.sh ./entrypoint.sh
+COPY docker/entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["/opt/facto/entrypoint.sh"]
